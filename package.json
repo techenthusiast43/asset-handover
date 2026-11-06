@@ -1,0 +1,25 @@
+{
+  "name": "asset-handover-dapp",
+  "version": "1.0.0",
+  "description": "AssetHandover - Lightweight physical asset custody management Web3 dApp on BOT Chain",
+  "scripts": {
+    "dev": "npm.cmd --prefix frontend run dev",
+    "build": "npm.cmd --prefix frontend run build",
+    "compile": "npm.cmd --prefix contracts run compile",
+    "test": "npm.cmd --prefix contracts test",
+    "deploy:bot": "npm.cmd --prefix contracts run deploy:bot"
+  },
+  "keywords": [
+    "botchain",
+    "solidity",
+    "web3",
+    "custody",
+    "assethandover",
+    "react",
+    "wagmi",
+    "ethers"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

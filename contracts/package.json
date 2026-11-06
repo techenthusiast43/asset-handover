@@ -1,0 +1,17 @@
+{
+  "name": "asset-handover-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for AssetHandover custody management on BOT Chain",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:bot": "hardhat run scripts/deploy.js --network botTestnet"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.0"
+  }
+}
+
