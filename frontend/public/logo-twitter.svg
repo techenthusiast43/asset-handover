@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#14291f" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#0b0f19" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#05070c" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Emerald Primary Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+
+    <!-- Cyan Accent Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="60%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#86efac"/>
+    </linearGradient>
+
+    <!-- Core Cube Face 1 (Top) -->
+    <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+
+    <!-- Core Cube Face 2 (Left) -->
+    <linearGradient id="cubeLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#052e16"/>
+    </linearGradient>
+
+    <!-- Core Cube Face 3 (Right) -->
+    <linearGradient id="cubeRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#0f4a25"/>
+    </linearGradient>
+
+    <!-- Outer Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="intenseGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="35" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="800" rx="160" fill="url(#bgGlow)"/>
+
+  <!-- Subtle Circular Guide Rings (Optics) -->
+  <circle cx="400" cy="400" r="320" fill="none" stroke="#22c55e" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="400" cy="400" r="260" fill="none" stroke="#22c55e" stroke-opacity="0.12" stroke-width="1.5" stroke-dasharray="10 14"/>
+
+  <!-- Ambient Light Sphere behind shield -->
+  <circle cx="400" cy="380" r="160" fill="#22c55e" fill-opacity="0.18" filter="url(#intenseGlow)"/>
+
+  <!-- MAIN SHIELD & HANDOVER EMBLEM -->
+  <g filter="url(#neonGlow)">
+    <!-- Outer Shield Crest Right Wing -->
+    <path d="M 400 150
+             C 490 150 590 200 620 250
+             C 620 440 500 580 400 650
+             L 400 570
+             C 460 510 540 400 540 270
+             C 500 240 440 220 400 220
+             Z"
+          fill="url(#emeraldGrad)" />
+
+    <!-- Outer Shield Crest Left Wing (Cyan Tint) -->
+    <path d="M 400 150
+             C 310 150 210 200 180 250
+             C 180 440 300 580 400 650
+             L 400 570
+             C 340 510 260 400 260 270
+             C 300 240 360 220 400 220
+             Z"
+          fill="url(#cyanGrad)" />
+  </g>
+
+  <!-- INTERLOCKING HANDOVER CUSTODY CORE -->
+  <!-- Upper Left Handshake Arc / Arrow -->
+  <path d="M 280 340
+           C 280 280 320 250 370 250
+           L 430 250
+           C 430 280 410 300 380 300
+           L 350 300
+           C 330 300 320 310 320 330
+           L 320 360
+           Z"
+        fill="#4ade80" />
+
+  <!-- Lower Right Handshake Arc / Arrow -->
+  <path d="M 520 460
+           C 520 520 480 550 430 550
+           L 370 550
+           C 370 520 390 500 420 500
+           L 450 500
+           C 470 500 480 490 480 470
+           L 480 440
+           Z"
+        fill="#22c55e" />
+
+  <!-- Central Isometric Physical Custody Node / Block -->
+  <g transform="translate(400, 400) scale(1.15)">
+    <!-- Top Face -->
+    <polygon points="0,-70 60,-35 0,0 -60,-35" fill="url(#cubeTop)" stroke="#bbf7d0" stroke-width="2"/>
+    <!-- Left Face -->
+    <polygon points="-60,-35 0,0 0,70 -60,35" fill="url(#cubeLeft)" stroke="#22c55e" stroke-width="1.5"/>
+    <!-- Right Face -->
+    <polygon points="0,0 60,-35 60,35 0,70" fill="url(#cubeRight)" stroke="#4ade80" stroke-width="1.5"/>
+
+    <!-- Keyhole / Trust Core inside cube -->
+    <circle cx="0" cy="30" r="12" fill="#4ade80" filter="url(#neonGlow)"/>
+    <polygon points="-5,32 5,32 8,50 -8,50" fill="#4ade80"/>
+  </g>
+
+  <!-- Orbiting Verification Nodes -->
+  <circle cx="210" cy="310" r="8" fill="#22d3ee" filter="url(#neonGlow)"/>
+  <circle cx="590" cy="490" r="8" fill="#4ade80" filter="url(#neonGlow)"/>
+</svg>
